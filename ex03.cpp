@@ -24,11 +24,13 @@ int main(){
             }else if(result_menu=="W"||result_menu=="w"){
                 cout<<withdraw_message;
                 cin>>template_money;
-                if(template_money>deposit_money){
-                    cout<<" !!! Withdraw "<<template_money<<"bath is Over "<<deposit_money<<" Bath , Sorry !!!"<<endl;
-                }else{
-                    deposit_money -= template_money;
-                    cout<<"Withdraw "<<template_money<<"bath and New Balance is "<<deposit_money<<" Bath"<<endl;
+                switch(template_money>deposit_money){
+                    case true :
+                        cout<<" !!! Withdraw "<<template_money<<"bath is Over "<<deposit_money<<" Bath , Sorry !!!"<<endl;
+                        break;
+                    default :
+                        deposit_money -= template_money;
+                        cout<<"Withdraw "<<template_money<<"bath and New Balance is "<<deposit_money<<" Bath"<<endl;
                 }
             }else if(result_menu=="V"||result_menu=="v"){
                 cout<<"Your balance is "<<deposit_money<<endl;
@@ -41,5 +43,6 @@ int main(){
 
 }
 //  credit Facebook Jack Supak
+
 
 
